@@ -1,5 +1,8 @@
+import {products} from './mocks/products.json'
+import Products from './components/Products.jsx'
+
 export default function App(){
     return(
-        <h1>Hola mundo</h1>
+        <Products products={products}/>
     )
 }
