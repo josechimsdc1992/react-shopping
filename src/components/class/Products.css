@@ -1,11 +1,11 @@
 .products {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .products ul {
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
