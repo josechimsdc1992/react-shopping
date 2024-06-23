@@ -1,11 +1,11 @@
-import { useState,useId } from 'react'
+import { useState,useId, useContext } from 'react'
 import './class/Filters.css'
+import { FiltersContext } from '../context/filtersContext'
 
-export function Filters({setFilters}){
-    const [minPrice,setMinPrice]=useState(0)
+export function Filters(){
+    const {filters,setFilters}=useContext(FiltersContext)
 
     const handleChangeMinPrice=(event)=>{
-        setMinPrice(event.target.value)
         setFilters(prevState=>({
             ...prevState,
             minPrice:event.target.value
@@ -26,7 +26,7 @@ export function Filters({setFilters}){
                 <label htmlFor="price">Price</label>
                 <input type="range" id={minPriceId} min='0' max='1000' onChange={handleChangeMinPrice}>
                 </input>
-                <span>${minPrice}</span>
+                <span>${filters.minPrice}</span>
             </div>
             <div>
                 <label htmlFor={categoryId}>Category</label>

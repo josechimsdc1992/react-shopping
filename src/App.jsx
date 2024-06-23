@@ -12,7 +12,7 @@ export default function App(){
 
     return(
         <>
-        <Header setFilters={setFilters}/>
+        <Header/>
         <Products products={filteredProducts}/>
         </>
         
